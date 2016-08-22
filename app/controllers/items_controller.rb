@@ -5,6 +5,8 @@ class ItemsController < ApplicationController
   # GET /items.json
   def index
     @items = Item.all
+    @total_opened = Item.where(event:"open").length 
+    @total_clicked = Item.where(event:"click").length 
   end
 
   # GET /items/1
