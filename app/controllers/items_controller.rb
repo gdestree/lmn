@@ -6,7 +6,16 @@ class ItemsController < ApplicationController
   def index
     @items = Item.all
     @total_opened = Item.where(event:"open").length 
-    @total_clicked = Item.where(event:"click").length 
+    @total_clicked = Item.where(event:"click").length
+
+    #Add code for statistics for email type - ORDER
+    open_order= Item.where(email_type:"Order", event: "open").length
+    click_order= Item.where(email_type:"Order", event: "click").length
+    total_order= Item.where(email_type:"Order").length
+    @open_rate_order= open_order.to_f/total_order
+    @click_rate_order= click_order.to_f/total_order
+
+
   end
 
   # GET /items/1
