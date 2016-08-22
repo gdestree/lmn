@@ -1,33 +1,59 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Items</h1>
+<h1>Email Data</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Address</th>
-      <th>Email type</th>
-      <th>Event</th>
-      <th>Time of event</th>
-      <th colspan="3"></th>
+      <th>Total emails sent</th>
+      <th>Total emails opened</th>
+      <th>Total clicks</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @items.each do |item| %>
       <tr>
-        <td><%= item.address %></td>
-        <td><%= item.email_type %></td>
-        <td><%= item.event %></td>
-        <td><%= item.time_of_event %></td>
-        <td><%= link_to 'Show', item %></td>
-        <td><%= link_to 'Edit', edit_item_path(item) %></td>
-        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= @items.count %></td>
+        <td><%= @items.count %></td>
+        <td><%= @items.count %></td>
       </tr>
-    <% end %>
   </tbody>
 </table>
+<br/>
+<table>
+  <thead>
+    <tr>
+      <th>Open rate - </th>
+      <th>Open rate - </th>
+      <th>Open rate - </th>
+      <th>Open rate - </th>
+      <th>Open rate - </th>
+    </tr>
+  </thead>
 
-<br>
+  <tbody>
+      <tr>
+        <td><%= @items.count %></td>
+      </tr>
+  </tbody>
+</table>
+<br/>
 
-<%= link_to 'New Item', new_item_path %>
+<table>
+  <thead>
+    <tr>
+      <th>Click rate - </th>
+      <th>Click rate - </th>
+      <th>Click rate - </th>
+      <th>Click rate - </th>
+      <th>Click rate - </th>
+      <th>Click rate - </th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><%= @items.count %></td>
+      </tr>
+  </tbody>
+</table>
