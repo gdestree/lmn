@@ -1,33 +1,70 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Items</h1>
+<h1>Email Data</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Address</th>
-      <th>Email type</th>
-      <th>Event</th>
-      <th>Time of event</th>
-      <th colspan="3"></th>
+      <th>Total emails sent</th>
+      <th>Total emails opened</th>
+      <th>Total clicks</th>
     </tr>
   </thead>
 
   <tbody>
-    <% @items.each do |item| %>
       <tr>
-        <td><%= item.address %></td>
-        <td><%= item.email_type %></td>
-        <td><%= item.event %></td>
-        <td><%= item.time_of_event %></td>
-        <td><%= link_to 'Show', item %></td>
-        <td><%= link_to 'Edit', edit_item_path(item) %></td>
-        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= @items.count %></td>
+        <td><%= @total_opened %></td>
+        <td><%= @total_clicked %></td>
       </tr>
-    <% end %>
+  </tbody>
+</table>
+<br/>
+<table>
+  <thead>
+    <tr>
+      <th>Open rate - ORDER</th>
+      <th>Open rate - SHIPMENT </th>
+      <th>Open rate - DISCOUNT</th>
+      <th>Open rate - CONFIRM</th>
+      <th>Open rate - REFER</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><%= @open_rate_order.round(3) %></td>
+        <td><%= @open_rate_shipment.round(3) %></td>
+        <td><%= @open_rate_discount.round(3) %></td>
+        <td><%= @open_rate_confirm.round(3) %></td>
+        <td><%= @open_rate_refer.round(3) %></td>
+      </tr>
+  </tbody>
+</table>
+<br/>
+
+<table>
+  <thead>
+    <tr>
+      <th>Click rate - ORDER</th>
+      <th>Click rate - SHIPMENT</th>
+      <th>Click rate - DISCOUNT</th>
+      <th>Click rate - CONFIRM</th>
+      <th>Click rate - REFER</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><%= @click_rate_order.round(3) %></td>
+        <td><%= @click_rate_shipment.round(3) %></td>
+        <td><%= @click_rate_discount.round(3) %></td>
+        <td><%= @click_rate_confirm.round(3) %></td>
+        <td><%= @click_rate_refer.round(3) %></td>
+      </tr>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Item', new_item_path %>
+<div>
+  <A HREF="javascript:history.go(0)">Click to refresh the page or the page will refresh every 8 seconds</A>
+</div>
