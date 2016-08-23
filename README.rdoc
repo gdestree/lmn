@@ -1,5 +1,8 @@
 == README
 
 * This is a coding exercise made for LMN by Gregor Destree.
+* On the CLI run: rake db:drop && rake db:create && rake db:migrate
+* On the CLI run: rails server 
+* Open localhost:4000 in browser
 * Direct the post request to: $GOPATH/bin/sender http://localhost:4000/items
-* open localhost:4000 and watch the results refresh themselves.
+* Watch the results roll in and the page refresh itself	
