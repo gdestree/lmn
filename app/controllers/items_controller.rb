@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  skip_before_filter :verify_authenticity_token
 
   # GET /items
   # GET /items.json
@@ -43,22 +44,17 @@ class ItemsController < ApplicationController
     @open_rate_refer= open_refer.to_f/total_refer
     @click_rate_refer= click_refer.to_f/total_refer
   end
-  
-  # POST /items
-  # POST /items.json
-  def create
-    @item = Item.new(item_params)
 
-    respond_to do |format|
-      if @item.save
-        format.html { redirect_to @item, notice: 'Item was successfully created.' }
-        format.json { render :show, status: :created, location: @item }
-      else
-        format.html { render :new }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
-      end
-    end
+  # Creating Items with the webhook call
+  def receive
+    data= []
+    # application/x-www-form-urlencoded
+    data << request.body.read
+    a = JSON.parse(data[0])
+    b = Item.create(address: a["Address"], email_type: a["EmailType"], event: a["Event"], time_of_event: a["Timestamp"])
+    render nothing: true
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
