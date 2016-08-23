@@ -1,4 +1,5 @@
 == README
 
-This is a coding exercise made for LMN.
-Direct the post request to:
+This is a coding exercise made for LMN by Gregor Destree.
+Direct the post request to: $GOPATH/bin/sender http://localhost:4000/items
+open localhost:4000 and watch the results refresh themselves.
