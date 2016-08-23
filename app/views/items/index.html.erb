@@ -33,11 +33,11 @@
 
   <tbody>
       <tr>
-        <td><%= @open_rate_order %></td>
-        <td><%= @open_rate_shipment %></td>
-        <td><%= @open_rate_discount %></td>
-        <td><%= @open_rate_confirm %></td>
-        <td><%= @open_rate_refer %></td>
+        <td><%= @open_rate_order.round(3) %></td>
+        <td><%= @open_rate_shipment.round(3) %></td>
+        <td><%= @open_rate_discount.round(3) %></td>
+        <td><%= @open_rate_confirm.round(3) %></td>
+        <td><%= @open_rate_refer.round(3) %></td>
       </tr>
   </tbody>
 </table>
@@ -56,11 +56,11 @@
 
   <tbody>
       <tr>
-        <td><%= @click_rate_order %></td>
-        <td><%= @click_rate_shipment %></td>
-        <td><%= @click_rate_discount %></td>
-        <td><%= @click_rate_confirm %></td>
-        <td><%= @click_rate_refer %></td>
+        <td><%= @click_rate_order.round(3) %></td>
+        <td><%= @click_rate_shipment.round(3) %></td>
+        <td><%= @click_rate_discount.round(3) %></td>
+        <td><%= @click_rate_confirm.round(3) %></td>
+        <td><%= @click_rate_refer.round(3) %></td>
       </tr>
   </tbody>
 </table>
