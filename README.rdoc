@@ -1,6 +1,7 @@
 == README
 
 * This is a coding exercise made for LMN by Gregor Destree.
+* I have chosen to use ruby on rails for this application. The frontend is a simple table that includes all the statistcs that were needed for the exercise. The index.html page is refreshed automatically every 8 seconds to enhance the user experience and so you can see the increase in the statistics. Each event is saved into the database and can be individually queried. The controller gets all the necessary information from the database and passes it through to the view. To extend the application we could use something like d3.js for data visualization. We could also group the statistics in certain time frames so you know how the statistics compare from one day to another. A final way to extend the application would be to have it sent daily reports to the user with a more extensive analysis of the events.  
 * On the CLI run: rake db:drop && rake db:create && rake db:migrate
 * On the CLI run: rails server 
 * Open localhost:4000 in browser
